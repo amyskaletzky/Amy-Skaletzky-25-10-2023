@@ -9,6 +9,7 @@ export const CURRENT_WEATHER = 'CURRENT_WEATHER'
 export const GET_LOCATION = 'GET_LOCATION'
 export const FIVE_DAY_FORCAST = 'FIVE_DAY_FORCAST'
 export const CLEAR_CITIES = "CLEAR_CITIES";
+export const SET_CURRENT_CITY = "SET_CURRENT_CITY";
 
 
 export const autoCompleteCountryWeather = (value) => (dispatch) => {
@@ -66,3 +67,11 @@ export const getFiveDayForcast = (cityObj) => (dispatch) => {
 export const clearCities = () => {
     return { type: CLEAR_CITIES };
 };
+
+export const setCurrentCity = (data) => (dispatch) => {
+    dispatch({
+        type: SET_CURRENT_CITY,
+        payload: data
+    })
+};
+

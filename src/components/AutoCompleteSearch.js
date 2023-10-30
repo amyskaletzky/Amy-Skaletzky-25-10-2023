@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import { autoCompleteCountryWeather, getCurrentWeather, getCurrentLocation, getFiveDayForcast, clearCities } from "../actions";
+import { autoCompleteCountryWeather, getCurrentWeather, getCurrentLocation, getFiveDayForcast, clearCities, setCurrentCity } from "../actions";
 import CurrentWeather from "./CurrentWeather";
 import FiveDayForcast from "./FiveDaysForcast";
 import searchIcon from "../assets/search-icon.svg"
@@ -14,21 +14,22 @@ const AutoCompleteSearch = (props) => {
         e.target.value.length > 0 ? dispatch(autoCompleteCountryWeather(e.target.value)) : dispatch(clearCities());
     }
 
-    const pickCity = (cityObj) => {
-        cityObj = {
-            key: cityObj.Key,
-            country: cityObj.Country.LocalizedName,
-            city: cityObj.LocalizedName
+    const pickCity = (cityObject) => {
+        const cityObj = {
+            key: cityObject.Key,
+            country: cityObject.Country.LocalizedName,
+            city: cityObject.LocalizedName
         }
         dispatch(getCurrentWeather(cityObj))
         dispatch(getCurrentLocation(cityObj))
         dispatch(getFiveDayForcast(cityObj))
+        dispatch(setCurrentCity(cityObj.city))
     }
 
 
     return (
         <div className="flex flex-col w-3/5 relative">
-            <div className="flex w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
+            <div className="flex w-full bg-gray-800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
                 <input type='text' onChange={(e) => handleChange(e)} className="bg-white bg-opacity-0 w-full" />
                 <img src={searchIcon} className="w-10 invert ml-auto" />
             </div>
@@ -44,18 +45,11 @@ const AutoCompleteSearch = (props) => {
                                     </li>
                                 )
                             }) : <></>
-
                     }
-
                 </ul>
             </div>
-
-
         </div>
-
-
     )
-    // placeholder={country}
 }
 
 export default AutoCompleteSearch;
