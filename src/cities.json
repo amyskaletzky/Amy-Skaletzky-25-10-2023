@@ -1,0 +1,152 @@
+[
+    {
+        "Version": 1,
+        "Key": "225007",
+        "Type": "City",
+        "Rank": 21,
+        "LocalizedName": "Osaka-shi",
+        "Country": {
+            "ID": "JP",
+            "LocalizedName": "Japan"
+        },
+        "AdministrativeArea": {
+            "ID": "27",
+            "LocalizedName": "Osaka"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "254946",
+        "Type": "City",
+        "Rank": 30,
+        "LocalizedName": "Oslo",
+        "Country": {
+            "ID": "NO",
+            "LocalizedName": "Norway"
+        },
+        "AdministrativeArea": {
+            "ID": "03",
+            "LocalizedName": "Oslo"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "124690",
+        "Type": "City",
+        "Rank": 31,
+        "LocalizedName": "Ostrava",
+        "Country": {
+            "ID": "CZ",
+            "LocalizedName": "Czechia"
+        },
+        "AdministrativeArea": {
+            "ID": "80",
+            "LocalizedName": "Moravian-Silesian"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "226091",
+        "Type": "City",
+        "Rank": 31,
+        "LocalizedName": "Oskemen",
+        "Country": {
+            "ID": "KZ",
+            "LocalizedName": "Kazakhstan"
+        },
+        "AdministrativeArea": {
+            "ID": "VOS",
+            "LocalizedName": "East Kazakhstan Region"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "255018",
+        "Type": "City",
+        "Rank": 31,
+        "LocalizedName": "Osogbo",
+        "Country": {
+            "ID": "NG",
+            "LocalizedName": "Nigeria"
+        },
+        "AdministrativeArea": {
+            "ID": "OS",
+            "LocalizedName": "Osun"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "36375",
+        "Type": "City",
+        "Rank": 35,
+        "LocalizedName": "Osasco",
+        "Country": {
+            "ID": "BR",
+            "LocalizedName": "Brazil"
+        },
+        "AdministrativeArea": {
+            "ID": "SP",
+            "LocalizedName": "São Paulo"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "119909",
+        "Type": "City",
+        "Rank": 41,
+        "LocalizedName": "Osijek",
+        "Country": {
+            "ID": "HR",
+            "LocalizedName": "Croatia"
+        },
+        "AdministrativeArea": {
+            "ID": "14",
+            "LocalizedName": "Osijek-Baranja"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "225017",
+        "Type": "City",
+        "Rank": 41,
+        "LocalizedName": "Osh",
+        "Country": {
+            "ID": "KG",
+            "LocalizedName": "Kyrgyzstan"
+        },
+        "AdministrativeArea": {
+            "ID": "GO",
+            "LocalizedName": "Osh City"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "319877",
+        "Type": "City",
+        "Rank": 41,
+        "LocalizedName": "Osmaniye",
+        "Country": {
+            "ID": "TR",
+            "LocalizedName": "Türkiye"
+        },
+        "AdministrativeArea": {
+            "ID": "80",
+            "LocalizedName": "Osmaniye"
+        }
+    },
+    {
+        "Version": 1,
+        "Key": "223634",
+        "Type": "City",
+        "Rank": 42,
+        "LocalizedName": "Osan",
+        "Country": {
+            "ID": "KR",
+            "LocalizedName": "South Korea"
+        },
+        "AdministrativeArea": {
+            "ID": "41",
+            "LocalizedName": "Gyeonggi-do"
+        }
+    }
+]

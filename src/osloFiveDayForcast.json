@@ -1,0 +1,180 @@
+{
+    "Headline": {
+        "EffectiveDate": "2023-03-23T07:00:00+01:00",
+        "EffectiveEpochDate": 1679551200,
+        "Severity": 3,
+        "Text": "Rain Thursday",
+        "Category": "rain",
+        "EndDate": "2023-03-23T19:00:00+01:00",
+        "EndEpochDate": 1679594400,
+        "MobileLink": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?unit=c&lang=en-us"
+    },
+    "DailyForecasts": [
+        {
+            "Date": "2023-03-22T07:00:00+01:00",
+            "EpochDate": 1679464800,
+            "Temperature": {
+                "Minimum": {
+                    "Value": 0.7,
+                    "Unit": "C",
+                    "UnitType": 17
+                },
+                "Maximum": {
+                    "Value": 4.8,
+                    "Unit": "C",
+                    "UnitType": 17
+                }
+            },
+            "Day": {
+                "Icon": 18,
+                "IconPhrase": "Rain",
+                "HasPrecipitation": true,
+                "PrecipitationType": "Rain",
+                "PrecipitationIntensity": "Light"
+            },
+            "Night": {
+                "Icon": 7,
+                "IconPhrase": "Cloudy",
+                "HasPrecipitation": false
+            },
+            "Sources": [
+                "AccuWeather"
+            ],
+            "MobileLink": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=1&unit=c&lang=en-us",
+            "Link": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=1&unit=c&lang=en-us"
+        },
+        {
+            "Date": "2023-03-23T07:00:00+01:00",
+            "EpochDate": 1679551200,
+            "Temperature": {
+                "Minimum": {
+                    "Value": 1.0,
+                    "Unit": "C",
+                    "UnitType": 17
+                },
+                "Maximum": {
+                    "Value": 6.1,
+                    "Unit": "C",
+                    "UnitType": 17
+                }
+            },
+            "Day": {
+                "Icon": 18,
+                "IconPhrase": "Rain",
+                "HasPrecipitation": true,
+                "PrecipitationType": "Rain",
+                "PrecipitationIntensity": "Light"
+            },
+            "Night": {
+                "Icon": 38,
+                "IconPhrase": "Mostly cloudy",
+                "HasPrecipitation": false
+            },
+            "Sources": [
+                "AccuWeather"
+            ],
+            "MobileLink": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=2&unit=c&lang=en-us",
+            "Link": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=2&unit=c&lang=en-us"
+        },
+        {
+            "Date": "2023-03-24T07:00:00+01:00",
+            "EpochDate": 1679637600,
+            "Temperature": {
+                "Minimum": {
+                    "Value": 1.7,
+                    "Unit": "C",
+                    "UnitType": 17
+                },
+                "Maximum": {
+                    "Value": 6.5,
+                    "Unit": "C",
+                    "UnitType": 17
+                }
+            },
+            "Day": {
+                "Icon": 6,
+                "IconPhrase": "Mostly cloudy",
+                "HasPrecipitation": false
+            },
+            "Night": {
+                "Icon": 8,
+                "IconPhrase": "Dreary",
+                "HasPrecipitation": false
+            },
+            "Sources": [
+                "AccuWeather"
+            ],
+            "MobileLink": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=3&unit=c&lang=en-us",
+            "Link": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=3&unit=c&lang=en-us"
+        },
+        {
+            "Date": "2023-03-25T07:00:00+01:00",
+            "EpochDate": 1679724000,
+            "Temperature": {
+                "Minimum": {
+                    "Value": -3.3,
+                    "Unit": "C",
+                    "UnitType": 17
+                },
+                "Maximum": {
+                    "Value": 4.7,
+                    "Unit": "C",
+                    "UnitType": 17
+                }
+            },
+            "Day": {
+                "Icon": 13,
+                "IconPhrase": "Mostly cloudy w/ showers",
+                "HasPrecipitation": true,
+                "PrecipitationType": "Rain",
+                "PrecipitationIntensity": "Light"
+            },
+            "Night": {
+                "Icon": 19,
+                "IconPhrase": "Flurries",
+                "HasPrecipitation": true,
+                "PrecipitationType": "Snow",
+                "PrecipitationIntensity": "Light"
+            },
+            "Sources": [
+                "AccuWeather"
+            ],
+            "MobileLink": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=4&unit=c&lang=en-us",
+            "Link": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=4&unit=c&lang=en-us"
+        },
+        {
+            "Date": "2023-03-26T07:00:00+01:00",
+            "EpochDate": 1679810400,
+            "Temperature": {
+                "Minimum": {
+                    "Value": -5.1,
+                    "Unit": "C",
+                    "UnitType": 17
+                },
+                "Maximum": {
+                    "Value": 4.0,
+                    "Unit": "C",
+                    "UnitType": 17
+                }
+            },
+            "Day": {
+                "Icon": 18,
+                "IconPhrase": "Rain",
+                "HasPrecipitation": true,
+                "PrecipitationType": "Rain",
+                "PrecipitationIntensity": "Light"
+            },
+            "Night": {
+                "Icon": 34,
+                "IconPhrase": "Mostly clear",
+                "HasPrecipitation": false
+            },
+            "Sources": [
+                "AccuWeather"
+            ],
+            "MobileLink": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=5&unit=c&lang=en-us",
+            "Link": "http://www.accuweather.com/en/no/oslo/254946/daily-weather-forecast/254946?day=5&unit=c&lang=en-us"
+        }
+    ]
+}
