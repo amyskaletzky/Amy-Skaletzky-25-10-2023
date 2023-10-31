@@ -25,9 +25,9 @@ export const autoCompleteCountryWeather = (value) => (dispatch) => {
 }
 
 
-export const getCurrentWeather = (cityObj) => (dispatch) => {
-    console.log(cityObj.key)
-    fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityObj.key}?apikey=${API_KEY}`)
+export const getCurrentWeather = (key) => (dispatch) => {
+    console.log(key)
+    fetch(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}&details=true`)
         .then(res => res.json())
         .then(data => {
             dispatch({

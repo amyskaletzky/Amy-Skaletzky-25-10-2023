@@ -23,7 +23,7 @@ const AutoCompleteSearch = (props) => {
         dispatch(getCurrentWeather(cityObj))
         dispatch(getCurrentLocation(cityObj))
         dispatch(getFiveDayForcast(cityObj))
-        dispatch(setCurrentCity(cityObj.city))
+        dispatch(setCurrentCity(cityObj))
     }
 
 

@@ -1,6 +1,7 @@
 import { GET_CITIES, CURRENT_WEATHER, GET_LOCATION, FIVE_DAY_FORCAST, CLEAR_CITIES, SET_CURRENT_CITY } from "../actions"
 const initState = {
     city: 'Tel Aviv',
+    key: 215854,
     cities_array: [],
     obj: {},
     location: {},
@@ -23,7 +24,7 @@ export const reducer = (state = initState, action = {}) => {
         case CLEAR_CITIES:
             return { ...state, cities_array: [] };
         case SET_CURRENT_CITY:
-            return { ...state, city: action.payload };
+            return { ...state, city: action.payload.city, key: action.payload.key };
         default:
             return { ...state }
     }
