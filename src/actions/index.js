@@ -1,7 +1,8 @@
 import cities from '../cities.json'
 import currentWeatherOslo from '../currentweatheroslo.json'
 import osloFiveDayForcast from '../osloFiveDayForcast.json'
-
+import { toast } from 'react-toastify';
+import { useRef } from 'react';
 const API_KEY = process.env.REACT_APP_API_KEY
 
 export const GET_CITIES = 'GET_CITIES'
@@ -12,28 +13,49 @@ export const CLEAR_CITIES = "CLEAR_CITIES";
 export const SET_CURRENT_CITY = "SET_CURRENT_CITY";
 export const GET_SUNRISE_SUNSET = "GET_SUNRISE_SUNSET"
 
-
 export const autoCompleteCountryWeather = (value) => (dispatch) => {
     fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${value}`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json()
+        }
+        )
         .then(data => {
             dispatch({
                 type: GET_CITIES,
                 payload: data
             })
         })
+        .catch((error) => {
+            toast.error(error.message);
+        });
 }
 
 
 export const getCurrentWeather = (key) => (dispatch) => {
+    let loadingCurrentWeatherToast;
+    loadingCurrentWeatherToast = toast.loading('fetching current weather...');
     fetch(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}&details=true`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json()
+        }
+        )
         .then(data => {
+            toast.dismiss(loadingCurrentWeatherToast);
+            toast('loaded current weather successfully');
             dispatch({
                 type: CURRENT_WEATHER,
                 payload: data
             })
-        })
+        }).catch((error) => {
+            toast.dismiss(loadingCurrentWeatherToast);
+            toast.error(error.message)
+        });
 }
 
 export const getCurrentLocation = (city) => (dispatch) => {
@@ -44,14 +66,27 @@ export const getCurrentLocation = (city) => (dispatch) => {
 }
 
 export const getFiveDayForecast = (key) => (dispatch) => {
+    let loadingFiveDayForecastToast;
+    loadingFiveDayForecastToast = toast.loading('fetching weather forecast...');
     fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}&metric=true`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json()
+        }
+        )
         .then(data => {
+            toast.dismiss(loadingFiveDayForecastToast);
+            toast('loaded forecast successfully');
             dispatch({
                 type: FIVE_DAY_FORECAST,
                 payload: data
             })
-        })
+        }).catch((error) => {
+            toast.dismiss(loadingFiveDayForecastToast);
+            toast.error(error.message);
+        });
 }
 
 
@@ -69,11 +104,19 @@ export const setCurrentCity = (data) => (dispatch) => {
 
 export const getSunriseSunset = (key) => (dispatch) => {
     fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${key}?apikey=${API_KEY}&details=true`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json()
+        }
+        )
         .then(data => {
             dispatch({
                 type: GET_SUNRISE_SUNSET,
                 payload: data
             })
-        })
+        }).catch((error) => {
+            toast.error(error.message);
+        });
 }

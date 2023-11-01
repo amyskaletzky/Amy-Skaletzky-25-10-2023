@@ -21,7 +21,7 @@ export const FavouriteButton = ({ cityKey, cityName }) => {
         return false;
     }
     return (
-        <div className='hover:cursor-pointer' onClick={() => handleFavourite(cityKey, cityName)}>
+        <div className='hover:cursor-pointer absolute left-0 top-0 m-2' onClick={() => handleFavourite(cityKey, cityName)}>
             {
                 checkIfFavourited(favourites, cityKey) ? <img src={favouritedStar} className="w-6 lg:w-10" alt='favourtie star icon' /> : <img src={beforeFavourited} className="w-6 lg:w-10" alt='unfavourite star icon' />
             }

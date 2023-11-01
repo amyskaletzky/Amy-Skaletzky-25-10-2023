@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { autoCompleteCountryWeather, getCurrentWeather, getCurrentLocation, getFiveDayForecast, clearCities, setCurrentCity } from "../actions";
-import CurrentWeather from "./CurrentWeather";
-import FiveDayForecast from "./FiveDaysForecast";
 import searchIcon from "../assets/search-icon.svg"
 
 
 const AutoCompleteSearch = (props) => {
     const cities = useSelector(state => state.cities_array)
     const dispatch = useDispatch()
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         e.target.value.length > 0 ? dispatch(autoCompleteCountryWeather(e.target.value)) : dispatch(clearCities());
@@ -24,6 +25,10 @@ const AutoCompleteSearch = (props) => {
         dispatch(getCurrentLocation(cityObj.key))
         dispatch(getFiveDayForecast(cityObj.key))
         dispatch(setCurrentCity(cityObj))
+
+        if (location.pathname === '/favourites') {
+            navigate('/', { state: { cityName: cityObj.city, cityKey: cityObj.key } });
+        }
     }
 
 

@@ -5,16 +5,18 @@ import CurrentWeather from "./CurrentWeather";
 import FiveDayForecast from "./FiveDaysForecast";
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Home = (props) => {
     const cityCurrentWeather = useSelector(state => state.obj)
-
     const city = useSelector(state => state.city)
     return (
+
         <div className="relative lg:h-screen flex justify-center items-center py-10">
             <div className="flex flex-col w-11/12 h-full">
-                { }
+
                 <video
                     autoPlay
                     muted
@@ -36,7 +38,8 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-        </div >
+            <ToastContainer />
+        </div>
     )
 }
 
