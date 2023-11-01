@@ -27,7 +27,7 @@ const CurrentWeather = (props) => {
     return (
         (cityCurrentWeather?.length > 0 && sunForecast) ?
             <div className="flex h-1/2 gap-4" >
-                <div className="flex w-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 border border-white border-opacity-60 justify-between">
+                <div className="flex w-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-60 justify-between">
                     <div className="flex flex-col justify-around gap-4 px-8 py-2 text-left">
                         <FavouriteButton cityKey={key} cityName={city} />
                         <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="w-32" />
@@ -45,7 +45,7 @@ const CurrentWeather = (props) => {
                         </div>
                     </div>
                 </div>
-                <div id="extra-info" className="flex flex-col h-full bg-white w-1/2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 border border-white border-opacity-60">
+                <div id="extra-info" className="flex flex-col h-full bg-white w-1/2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-60">
                     <div className="flex justify-between px-8 py-2 h-1/2">
                         <div className="flex flex-col items-center justify-center ">
                             <p className="text-3xl">UV-Index</p>

@@ -7,7 +7,7 @@ const Favourites = (props) => {
     const [favourites, setFavourites] = useLocalStorage('favourites', []);
     return (
         <div className="relative h-screen flex justify-center items-center">
-            <div className="flex flex-col w-3/4 h-5/6  ">
+            <div className="flex flex-col w-11/12 h-full ">
                 <video
                     autoPlay
                     muted
@@ -16,11 +16,12 @@ const Favourites = (props) => {
                 >
                     <source src={cloudySun} type="video/mp4" />
                 </video>
-                <div className="relative z-10 flex flex-col h-full  gap-4">
+                <div className="relative z-10 flex flex-col h-full py-10 gap-4">
                     <NavBar />
                     <div className="flex flex-col justify-between w-full h-full gap-4">
                         <div id="bottom" className="h-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-50">
                             {favourites.length > 0 ? favourites.map((favourite) => (
+
                                 <Favourite cityName={favourite?.cityName} cityKey={favourite?.cityKey} />
                             )) : <></>}
                         </div>

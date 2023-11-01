@@ -1,7 +1,6 @@
 import AutoCompleteSearch from "./AutoCompleteSearch";
 import NavBar from "./NavBar";
 import day from '../assets/clouds-sun.mp4';
-import night from '../assets/night.mp4'
 import CurrentWeather from "./CurrentWeather";
 import FiveDayForecast from "./FiveDaysForecast";
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,17 +9,6 @@ import { useEffect } from "react";
 
 const Home = (props) => {
     const cityCurrentWeather = useSelector(state => state.obj)
-    console.log(cityCurrentWeather)
-    let vid
-
-    useEffect(() => {
-        if (cityCurrentWeather?.length > 0) {
-            vid = cityCurrentWeather[0].IsDayTime ? 'day' : 'night';
-        } else {
-            vid = 'day';
-        }
-    }, [cityCurrentWeather])
-
 
     const city = useSelector(state => state.city)
     return (
@@ -34,7 +22,7 @@ const Home = (props) => {
                     className="absolute inset-0 w-full h-full object-cover"
                 >
                     <source
-                        src={vid === 'day' ? day : night}
+                        src={day}
                         type="video/mp4"
                     />
                 </video>
