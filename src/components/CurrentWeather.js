@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { autoCompleteCountryWeather, getCurrentWeather, getCurrentLocation, getFiveDayForecast, clearCities, getSunriseSunset } from "../actions";
 import { getDayOfWeek, getDateNow, getTime } from "../helpers/dayDate";
-
+import beforeFavourited from '../assets/preFavouriteStar.svg'
+import favouritedStar from '../assets/favouriteStar.svg'
 
 const CurrentWeather = (props) => {
     const dispatch = useDispatch()
@@ -53,11 +54,23 @@ const CurrentWeather = (props) => {
     return (
         (cityCurrentWeather?.length > 0 && sunForecast) ?
             <div className="flex h-1/2 gap-4" >
-                <div className=" w-1/2 bg-gray-800 rounded- md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
-                    <p className="text-xl">{city}</p>
-                    <p className="text-xl">{getDayOfWeek(cityCurrentWeather[0].LocalObservationDateTime)}</p>
-                    <p className="text-xl">{getDateNow(cityCurrentWeather[0].LocalObservationDateTime)}</p>
-                    <p className="mt-12 text-lg">{cityCurrentWeather[0].Temperature.Metric.Value} {cityCurrentWeather[0].Temperature.Metric.Unit}</p>
+                <div className="flex w-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-60 justify-between">
+                    <div className="flex flex-col gap-4 px-8 py-1">
+                        <img src={beforeFavourited} className="w-10 " />
+                        <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="w-32 self-center" />
+                        <div className="flex flex-col gap-4">
+                            <p className="text-5xl">{cityCurrentWeather[0].Temperature.Metric.Value} {cityCurrentWeather[0].Temperature.Metric.Unit}</p>
+                            <p className="text-4xl">{cityCurrentWeather[0].WeatherText}</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <p className="text-4xl">{city}</p>
+                        <div>
+                            <p className="text-3xl">{getTime(cityCurrentWeather[0].EpochTime)}</p>
+                            <p className="text-3xl">{getDayOfWeek(cityCurrentWeather[0].EpochTime)}</p>
+                            <p className="text-3xl">{getDateNow(cityCurrentWeather[0].EpochTime)}</p>
+                        </div>
+                    </div>
                 </div>
                 <div className=" h-full bg-gray-800 w-1/2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
                     <p className="text-xl">{getTime(sunForecast.DailyForecasts[0].Sun.Set)}</p>
