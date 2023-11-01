@@ -14,7 +14,7 @@ export const SET_CURRENT_CITY = "SET_CURRENT_CITY";
 export const GET_SUNRISE_SUNSET = "GET_SUNRISE_SUNSET"
 
 export const autoCompleteCountryWeather = (value) => (dispatch) => {
-    fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${value}`)
+    fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${value}`)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`HTTP error! Status: ${res.status}`);
@@ -37,7 +37,7 @@ export const autoCompleteCountryWeather = (value) => (dispatch) => {
 export const getCurrentWeather = (key) => (dispatch) => {
     let loadingCurrentWeatherToast;
     loadingCurrentWeatherToast = toast.loading('fetching current weather...');
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}&details=true`)
+    fetch(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}&details=true`)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`HTTP error! Status: ${res.status}`);
@@ -68,7 +68,7 @@ export const getCurrentLocation = (city) => (dispatch) => {
 export const getFiveDayForecast = (key) => (dispatch) => {
     let loadingFiveDayForecastToast;
     loadingFiveDayForecastToast = toast.loading('fetching weather forecast...');
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}&metric=true`)
+    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}&metric=true`)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`HTTP error! Status: ${res.status}`);
@@ -103,7 +103,7 @@ export const setCurrentCity = (data) => (dispatch) => {
 };
 
 export const getSunriseSunset = (key) => (dispatch) => {
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/1day/${key}?apikey=${API_KEY}&details=true`)
+    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${key}?apikey=${API_KEY}&details=true`)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`HTTP error! Status: ${res.status}`);
