@@ -1,35 +1,54 @@
 import AutoCompleteSearch from "./AutoCompleteSearch";
 import NavBar from "./NavBar";
-import cloudySun from '../assets/clouds-sun.mp4'
+import day from '../assets/clouds-sun.mp4';
+import night from '../assets/night.mp4'
 import CurrentWeather from "./CurrentWeather";
 import FiveDayForecast from "./FiveDaysForecast";
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from "react";
 
 
 const Home = (props) => {
+    const cityCurrentWeather = useSelector(state => state.obj)
+    console.log(cityCurrentWeather)
+    let vid
+
+    useEffect(() => {
+        if (cityCurrentWeather?.length > 0) {
+            vid = cityCurrentWeather[0].IsDayTime ? 'day' : 'night';
+        } else {
+            vid = 'day';
+        }
+    }, [cityCurrentWeather])
+
+
     const city = useSelector(state => state.city)
     return (
         <div className="relative h-screen flex justify-center items-center py-10">
             <div className="flex flex-col w-11/12 h-full">
+                { }
                 <video
                     autoPlay
                     muted
                     loop
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src={cloudySun} type="video/mp4" />
+                    <source
+                        src={vid === 'day' ? day : night}
+                        type="video/mp4"
+                    />
                 </video>
-                <div className="relative z-10 flex flex-col h-full  gap-4">
+                <div className="relative z-10 flex flex-col h-full gap-4">
                     <NavBar />
                     <div className="flex flex-col justify-between w-full h-full gap-4">
                         <CurrentWeather />
                         <FiveDayForecast />
 
-                        
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

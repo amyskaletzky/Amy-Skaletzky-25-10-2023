@@ -20,8 +20,8 @@ const CurrentWeather = (props) => {
         dispatch(getSunriseSunset(key))
     }, [])
 
-    const cityCurrentWeather = useSelector(state => state.obj)
     const locationObj = useSelector(state => state.location)
+    const cityCurrentWeather = useSelector(state => state.obj)
     const sunForecast = useSelector(state => state.forecast)
 
     return (
