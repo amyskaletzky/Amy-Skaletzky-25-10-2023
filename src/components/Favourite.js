@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { FavouriteButton } from './FavouriteButton ';
 
 export const Favourite = ({ cityName, cityKey }) => {
     const API_KEY = process.env.REACT_APP_API_KEY
@@ -20,7 +21,10 @@ export const Favourite = ({ cityName, cityKey }) => {
     return (
         currentTemperature && currentTemperature.icon ?
             <div className='flex flex-col justify-between items-center  bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-50 h-1/2 w-1/5 py-8'>
-                <p className='text-5xl'>{cityName} </p>
+                <div className='flex items-start'>
+                    <FavouriteButton className="" cityKey={cityKey} cityName={cityName} />
+                    <p className='text-5xl'>{cityName} </p>
+                </div>
                 <img src={require('../assets/' + currentTemperature?.icon + '.svg')} className='h-32 w-auto' />
                 <div className='flex flex-col gap-6'>
                     <p className='text-4xl'>{currentTemperature?.temperature}</p>
