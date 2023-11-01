@@ -30,7 +30,7 @@ const CurrentWeather = (props) => {
                 <div className="flex w-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-60 justify-between">
                     <div className="flex flex-col justify-around gap-4 px-8 py-2 text-left">
                         <FavouriteButton cityKey={key} cityName={city} />
-                        <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="w-32" />
+                        <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="h-32 w-auto" />
                         <div className="flex flex-col gap-4">
                             <p className="text-6xl">{cityCurrentWeather[0].Temperature.Metric.Value}°{cityCurrentWeather[0].Temperature.Metric.Unit}</p>
                             <p className="text-5xl">{cityCurrentWeather[0].WeatherText}</p>
