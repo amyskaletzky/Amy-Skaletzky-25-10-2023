@@ -23,7 +23,7 @@ export const FavouriteButton = ({ cityKey, cityName }) => {
     return (
         <div onClick={() => handleFavourite(cityKey, cityName)}>
             {
-                checkIfFavourited(favourites, cityKey) ? <img src={favouritedStar} className="w-10 " alt='favourtie star icon' /> : <img src={beforeFavourited} className="w-10 " alt='unfavourite star icon' />
+                checkIfFavourited(favourites, cityKey) ? <img src={favouritedStar} className="w-6 lg:w-10" alt='favourtie star icon' /> : <img src={beforeFavourited} className="w-6 lg:w-10" alt='unfavourite star icon' />
             }
         </div>
     )

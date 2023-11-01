@@ -15,22 +15,22 @@ const FiveDayForecast = (props) => {
 
     return (
         <div id="bottom" className="h-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-50 flex flex-col justify-center">
-            <section className="flex justify-evenly">
+            <section className="flex lg:flex-row flex-col justify-evenly">
                 {
                     (Object.keys(fiveDayWeather).length !== 0) ?
                         fiveDayWeather.DailyForecasts.map(day => {
                             return (
                                 <>
                                     <div className=" h-full w-full flex flex-col gap-4" >
-                                        <img src={require('../assets/' + day.Day.Icon + '.svg')} className="h-24 w-auto" />
+                                        <img src={require('../assets/' + day.Day.Icon + '.svg')} className="h-16 lg:h-24 w-auto" alt='forecast icon' />
                                         <div>
-                                            <p className="text-2xl">{getDayOfWeek(day.Date)}</p>
-                                            <p className="text-2xl">{getDateNow(day.Date)}</p>
+                                            <p className="text-md lg:text-2xl">{getDayOfWeek(day.Date)}</p>
+                                            <p className="text-md lg:text-2xl">{getDateNow(day.Date)}</p>
 
                                         </div>
-                                        <p className="text-4xl">{day.Temperature.Maximum.Value}°{day.Temperature.Maximum.Unit}</p>
+                                        <p className="text-lg lg:text-3xl">{day.Temperature.Maximum.Value}°{day.Temperature.Maximum.Unit}</p>
                                     </div>
-                                    <div className="border-l border-gray-500 border-opacity-40 h-full last:border-l-0"></div>
+                                    <div className="border-b lg:border-l border-gray-500 border-opacity-40 h-full last:border-b-0 last:border-l-0"></div>
 
                                 </>
 
@@ -47,4 +47,3 @@ const FiveDayForecast = (props) => {
 }
 
 export default FiveDayForecast;
-

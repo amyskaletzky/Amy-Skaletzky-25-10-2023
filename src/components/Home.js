@@ -12,7 +12,7 @@ const Home = (props) => {
 
     const city = useSelector(state => state.city)
     return (
-        <div className="relative h-screen flex justify-center items-center py-10">
+        <div className="relative lg:h-screen flex justify-center items-center py-10">
             <div className="flex flex-col w-11/12 h-full">
                 { }
                 <video
@@ -36,7 +36,7 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
