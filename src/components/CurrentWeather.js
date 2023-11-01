@@ -26,7 +26,7 @@ const CurrentWeather = (props) => {
         (cityCurrentWeather?.length > 0 && sunForecast) ?
             <div className="flex flex-col lg:flex-row lg:h-1/2 gap-4" >
                 <div className="flex w-full lg:w-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-60 justify-between">
-                    <div className="flexflex-col justify-around gap-4 px-8 py-2 text-left">
+                    <div className="flex flex-col justify-around gap-4 px-8 py-2 text-left">
                         <FavouriteButton cityKey={key} cityName={city} />
                         <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="w-24 lg:w-32" alt="weather icon" />
                         <div className="flex flex-col gap-4">
