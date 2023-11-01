@@ -19,7 +19,6 @@ export const autoCompleteCountryWeather = (value) => (dispatch) => {
         .then(data => {
             dispatch({
                 type: GET_CITIES,
-                // payload: cities
                 payload: data
             })
         })
@@ -32,7 +31,6 @@ export const getCurrentWeather = (key) => (dispatch) => {
         .then(data => {
             dispatch({
                 type: CURRENT_WEATHER,
-                // payload: currentWeatherOslo
                 payload: data
             })
         })
@@ -51,24 +49,18 @@ export const getFiveDayForecast = (key) => (dispatch) => {
         .then(data => {
             dispatch({
                 type: FIVE_DAY_FORECAST,
-                payload: data //instead of data for now with json file
+                payload: data
             })
         })
 }
 
 
-// export const getDefaultWeather = () => (dispatch) => {
-//     fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=${process.env.API_KEY}`)
-//         .then(res => res.json())
-//         .then(data=>)
-// }
 
 export const clearCities = () => {
     return { type: CLEAR_CITIES };
 };
 
 export const setCurrentCity = (data) => (dispatch) => {
-    console.log('DATA:', data)
     dispatch({
         type: SET_CURRENT_CITY,
         payload: data

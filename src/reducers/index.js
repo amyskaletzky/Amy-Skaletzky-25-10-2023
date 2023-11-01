@@ -15,13 +15,10 @@ export const reducer = (state = initState, action = {}) => {
         case GET_CITIES:
             return { ...state, cities_array: action.payload }
         case GET_LOCATION:
-            console.log(action.payload);
             return { ...state, location: action.payload }
         case CURRENT_WEATHER:
-            console.log('current-weather-reducers:', action.payload)
             return { ...state, cities_array: [], obj: action.payload }
         case FIVE_DAY_FORECAST:
-            console.log('five-day-reducers:', action.payload)
             return { ...state, five_day_arr: action.payload }
         case CLEAR_CITIES:
             return { ...state, cities_array: [] };
