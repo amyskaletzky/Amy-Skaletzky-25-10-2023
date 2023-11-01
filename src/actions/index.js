@@ -46,7 +46,7 @@ export const getCurrentLocation = (city) => (dispatch) => {
 }
 
 export const getFiveDayForecast = (key) => (dispatch) => {
-    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}`)
+    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}&metric=true`)
         .then(res => res.json())
         .then(data => {
             dispatch({

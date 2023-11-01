@@ -29,9 +29,9 @@ const AutoCompleteSearch = (props) => {
 
     return (
         <div className="flex flex-col w-3/5 relative">
-            <div className="flex w-full bg-gray-800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
+            <div className="flex w-full bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-50">
                 <input type='text' onChange={(e) => handleChange(e)} className="bg-white bg-opacity-0 w-full" />
-                <img src={searchIcon} className="w-10 invert ml-auto" />
+                <img src={searchIcon} className="w-10 ml-auto" />
             </div>
             <div className="absolute top-8">
                 <ul>

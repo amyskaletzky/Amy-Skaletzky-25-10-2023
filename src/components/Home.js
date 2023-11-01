@@ -9,8 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 const Home = (props) => {
     const city = useSelector(state => state.city)
     return (
-        <div className="relative h-screen flex justify-center items-center">
-            <div className="flex flex-col w-3/4 h-5/6  ">
+        <div className="relative h-screen flex justify-center items-center py-10">
+            <div className="flex flex-col w-11/12 h-full">
                 <video
                     autoPlay
                     muted
@@ -23,10 +23,9 @@ const Home = (props) => {
                     <NavBar />
                     <div className="flex flex-col justify-between w-full h-full gap-4">
                         <CurrentWeather />
-                        {/* <FiveDayForecast /> */}
+                        <FiveDayForecast />
 
-                        <div id="bottom" className="h-1/2 bg-gray-800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
-                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -58,11 +58,11 @@ const CurrentWeather = (props) => {
         (cityCurrentWeather?.length > 0 && sunForecast) ?
             <div className="flex h-1/2 gap-4" >
                 <div className="flex w-1/2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 border border-white border-opacity-60 justify-between">
-                    <div className="flex flex-col gap-4 px-8 py-2 text-left">
+                    <div className="flex flex-col justify-around gap-4 px-8 py-2 text-left">
                         <img src={beforeFavourited} className="w-10 " />
-                        <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="w-28" />
+                        <img src={require('../assets/' + cityCurrentWeather[0].WeatherIcon + '.svg')} className="w-32" />
                         <div className="flex flex-col gap-4">
-                            <p className="text-6xl">{cityCurrentWeather[0].Temperature.Metric.Value} {cityCurrentWeather[0].Temperature.Metric.Unit}</p>
+                            <p className="text-6xl">{cityCurrentWeather[0].Temperature.Metric.Value}°{cityCurrentWeather[0].Temperature.Metric.Unit}</p>
                             <p className="text-5xl">{cityCurrentWeather[0].WeatherText}</p>
                         </div>
                     </div>
@@ -94,8 +94,7 @@ const CurrentWeather = (props) => {
                             <p className="text-2xl">{cityCurrentWeather[0].RelativeHumidity + '%'}</p>
                         </div>
                     </div>
-                    {/* whyyy??????? */}
-                    <div className="border-t border-gray-500 border-opacity-40 w-full mx-auto px-8"></div>
+                    <div className="border-t border-gray-500 border-opacity-40 w-11/12 mx-auto"></div>
                     <div className="flex h-1/2 items-center justify-center gap-7">
                         <div>
                             <img src={sunrise} className="w-20" />
