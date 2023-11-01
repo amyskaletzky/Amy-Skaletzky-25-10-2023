@@ -1,9 +1,11 @@
-import { GET_CITIES, CURRENT_WEATHER, GET_LOCATION, FIVE_DAY_FORCAST, CLEAR_CITIES, SET_CURRENT_CITY } from "../actions"
+import { GET_CITIES, CURRENT_WEATHER, GET_LOCATION, FIVE_DAY_FORECAST, CLEAR_CITIES, SET_CURRENT_CITY, GET_SUNRISE_SUNSET } from "../actions"
+
 const initState = {
     city: 'Tel Aviv',
     key: 215854,
     cities_array: [],
     obj: {},
+    forecast: null,
     location: {},
     five_day_arr: []
 }
@@ -18,13 +20,15 @@ export const reducer = (state = initState, action = {}) => {
         case CURRENT_WEATHER:
             console.log('current-weather-reducers:', action.payload)
             return { ...state, cities_array: [], obj: action.payload }
-        case FIVE_DAY_FORCAST:
+        case FIVE_DAY_FORECAST:
             console.log('five-day-reducers:', action.payload)
             return { ...state, five_day_arr: action.payload }
         case CLEAR_CITIES:
             return { ...state, cities_array: [] };
         case SET_CURRENT_CITY:
-            return { ...state, city: action.payload.city, key: action.payload.key };
+            return { ...state, city: action.payload.city, key: action.payload.key, country: action.payload.country };
+        case GET_SUNRISE_SUNSET:
+            return { ...state, forecast: action.payload };
         default:
             return { ...state }
     }

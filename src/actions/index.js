@@ -7,9 +7,10 @@ const API_KEY = process.env.REACT_APP_API_KEY
 export const GET_CITIES = 'GET_CITIES'
 export const CURRENT_WEATHER = 'CURRENT_WEATHER'
 export const GET_LOCATION = 'GET_LOCATION'
-export const FIVE_DAY_FORCAST = 'FIVE_DAY_FORCAST'
+export const FIVE_DAY_FORECAST = 'FIVE_DAY_FORECAST'
 export const CLEAR_CITIES = "CLEAR_CITIES";
 export const SET_CURRENT_CITY = "SET_CURRENT_CITY";
+export const GET_SUNRISE_SUNSET = "GET_SUNRISE_SUNSET"
 
 
 export const autoCompleteCountryWeather = (value) => (dispatch) => {
@@ -26,7 +27,6 @@ export const autoCompleteCountryWeather = (value) => (dispatch) => {
 
 
 export const getCurrentWeather = (key) => (dispatch) => {
-    console.log(key)
     fetch(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}&details=true`)
         .then(res => res.json())
         .then(data => {
@@ -45,13 +45,12 @@ export const getCurrentLocation = (city) => (dispatch) => {
     })
 }
 
-export const getFiveDayForcast = (cityObj) => (dispatch) => {
-    console.log(cityObj.key)
-    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityObj.key}?apikey=${API_KEY}`)
+export const getFiveDayForecast = (key) => (dispatch) => {
+    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}`)
         .then(res => res.json())
         .then(data => {
             dispatch({
-                type: FIVE_DAY_FORCAST,
+                type: FIVE_DAY_FORECAST,
                 payload: data //instead of data for now with json file
             })
         })
@@ -69,9 +68,20 @@ export const clearCities = () => {
 };
 
 export const setCurrentCity = (data) => (dispatch) => {
+    console.log('DATA:', data)
     dispatch({
         type: SET_CURRENT_CITY,
         payload: data
     })
 };
 
+export const getSunriseSunset = (key) => (dispatch) => {
+    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${key}?apikey=${API_KEY}&details=true`)
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: GET_SUNRISE_SUNSET,
+                payload: data
+            })
+        })
+}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 
-const FiveDayForcast = (props) => {
+const FiveDayForecast = (props) => {
     const fiveDayWeather = useSelector(state => state.five_day_arr)
     // console.log(fiveDayWeather.DailyForecasts)
     // console.log(fiveDayWeather.DailyForecasts[0].Temperature)
@@ -11,7 +11,7 @@ const FiveDayForcast = (props) => {
 
     return (
         <>
-            <h1>Five Day Forcast</h1>
+            <h1>Five Day Forecast</h1>
             <section className="flex justify-evenly">
                 {
                     (Object.keys(fiveDayWeather).length !== 0) ?
@@ -34,7 +34,7 @@ const FiveDayForcast = (props) => {
     )
 }
 
-export default FiveDayForcast;
+export default FiveDayForecast;
 
 
 

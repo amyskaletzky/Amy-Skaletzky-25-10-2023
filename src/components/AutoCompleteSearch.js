@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import { autoCompleteCountryWeather, getCurrentWeather, getCurrentLocation, getFiveDayForcast, clearCities, setCurrentCity } from "../actions";
+import { autoCompleteCountryWeather, getCurrentWeather, getCurrentLocation, getFiveDayForecast, clearCities, setCurrentCity } from "../actions";
 import CurrentWeather from "./CurrentWeather";
-import FiveDayForcast from "./FiveDaysForcast";
+import FiveDayForecast from "./FiveDaysForecast";
 import searchIcon from "../assets/search-icon.svg"
 
 
@@ -20,9 +20,9 @@ const AutoCompleteSearch = (props) => {
             country: cityObject.Country.LocalizedName,
             city: cityObject.LocalizedName
         }
-        dispatch(getCurrentWeather(cityObj))
-        dispatch(getCurrentLocation(cityObj))
-        dispatch(getFiveDayForcast(cityObj))
+        dispatch(getCurrentWeather(cityObj.key))
+        dispatch(getCurrentLocation(cityObj.key))
+        dispatch(getFiveDayForecast(cityObj.key))
         dispatch(setCurrentCity(cityObj))
     }
 

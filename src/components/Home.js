@@ -2,7 +2,7 @@ import AutoCompleteSearch from "./AutoCompleteSearch";
 import NavBar from "./NavBar";
 import cloudySun from '../assets/clouds-sun.mp4'
 import CurrentWeather from "./CurrentWeather";
-import FiveDayForcast from "./FiveDaysForcast";
+import FiveDayForecast from "./FiveDaysForecast";
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -23,7 +23,7 @@ const Home = (props) => {
                     <NavBar />
                     <div className="flex flex-col justify-between w-full h-full gap-4">
                         <CurrentWeather />
-                        {/* <FiveDayForcast /> */}
+                        {/* <FiveDayForecast /> */}
 
                         <div id="bottom" className="h-1/2 bg-gray-800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 border border-white border-opacity-25">
                         </div>
