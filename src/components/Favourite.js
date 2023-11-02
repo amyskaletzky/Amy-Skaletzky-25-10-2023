@@ -9,7 +9,7 @@ export const Favourite = ({ cityName, cityKey }) => {
     const [currentTemperature, setCurrentTemperature] = useState({ temperature: '', text: '' });
 
     const fetchCurrentWeather = () => {
-        fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}&details=true`)
+        fetch(`https://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}&details=true`)
             .then(res => res.json())
             .then(data => {
                 setCurrentTemperature({ temperature: data[0].Temperature.Metric.Value, text: data[0].WeatherText, icon: data[0].WeatherIcon });
