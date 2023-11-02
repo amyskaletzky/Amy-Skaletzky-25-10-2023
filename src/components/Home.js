@@ -10,10 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Home = (props) => {
-    const cityCurrentWeather = useSelector(state => state.obj)
-    const city = useSelector(state => state.city)
     return (
-
         <div className="relative lg:h-screen flex justify-center items-center py-10">
             <div className="flex flex-col w-11/12 h-full">
 
