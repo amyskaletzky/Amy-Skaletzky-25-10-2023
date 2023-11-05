@@ -7,7 +7,6 @@ import sunrise from '../assets/sunrise.svg';
 import sunset from '../assets/sunset.svg';
 import { FavouriteButton } from "./FavouriteButton ";
 
-
 const CurrentWeather = (props) => {
     const dispatch = useDispatch()
     const key = useSelector(state => state.key)
