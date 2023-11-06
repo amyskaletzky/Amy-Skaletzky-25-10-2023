@@ -22,6 +22,7 @@ export const Favourite = ({ cityName, cityKey }) => {
     useEffect(() => {
         fetchCurrentWeather();
     }, []);
+    
     return (
         currentTemperature && currentTemperature.icon ?
             <div className='flex flex-col justify-between items-center  bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-25 border border-white border-opacity-50 h-1/2 w-80 py-8'>
